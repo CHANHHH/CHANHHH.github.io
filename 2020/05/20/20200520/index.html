@@ -1,0 +1,962 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="chanss">
+    <title>20200520 - chanss</title>
+    <meta name="author" content="chan">
+    
+    
+    
+    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"chan","sameAs":["https://github.com/","http://stackoverflow.com/users","https://twitter.com/","https://facebook.com/","https://plus.google.com/","https://www.linkedin.com/profile/","mailto"]},"articleBody":"\n \n  \n\t  nike\n\t  \n\t  \n\t  \t@charset \"utf-8\";\n\t\t/*css�� �����´�.*/\n\t\t@import url('https://fonts.googleapis.com/css2?family=Monoton&family=Play&display=swap');\n\n\t\t* { margin:0; padding:0; }\n\t\tli { list-style:none; }\n\t\ta { text-decoration:none; color:#bbb; }\n\t\thtml,body { height:100%; background:#111; }\n\t\t\n\t\tfigure {\n\t\t\twidth:100%;\n\t\t\theight:100%;\n\t\t\toverflow:hidden;\n\t\t\tposition:relative;\n\t\t}\n\t\tfigure video {\n\t\t\twidth:100%;\n\t\t\theight:100%; /*�������� ũ�Ⱑ �߿�. 1280 1000*/\n\t\t\tmin-width:1280px; /*overflow hidden �ֱ�*/\n\t\t}\n\n\t\theader {\n\t\t\twidth:700px;\n\t\t\theight:100%;\n\t\t\tbackground:linear-gradient(-45deg, #e6fc55 0%, #b9fb05 50%, #97e031 100%);\n\t\t\ttransform:skewX(-40deg);\n\t\t\tposition:absolute;\n\t\t\tleft:-420px;\n\t\t\ttop:0;\n\t\t}\n\t\theader #lnb li a {\n\t\t\tdisplay:block;\n\t\t\ttransform:skewX(25deg);\n\t\t\tcolor:#000;\n\t\t\ttext-align:right;\n\t\t\tmargin-right:40px;\n\t\t}\n\t\theader #lnb li {\n\t\t\twidth:220px;\n\t\t\t\n\t\t\tpadding:10px;\n\t\t\tposition:relative;\n\t\t}\n\t\theader #lnb > li:first-child {\n\t\t\tbackground:black;\n\t\t}\n\t\theader #lnb > li:first-child a {\n\t\t\tcolor:#fff;\n\t\t}\n\n\t\theader ul > li {\n\t\t\tposition:absolute;\n\t\t\ttop:0;\n\t\t\tleft:0;\n\t\t\tposition:relative;\n\t\t\t\n\t\t}\n\t\theader ul li ul {\n\t\t\tposition:absolute;\n\t\t\ttop:-2%;\n\t\t\tleft:-300%;\n\t\t\topacity:0;\n\t\t\ttransition:all 0.3s;\n\t\t}\n\t\t\n\t\theader ul li:first-child ul {\n\t\t\topacity:1;\n\t\t\tleft:90%;\n\t\t\ttop:-30%;\n\t\t\t\n\t\t}\n\n\t\theader ul {\n\t\t\tposition:absolute;\n\t\t\ttop:20%;\n\t\t\tright:0;\n\t\t}\n\t\t\theader #lnb li li {\n\t\t\tdisplay:block;\n\t\t\tbackground:rgba(0,0,0,0.5);\n\t\t\tborder-bottom:5px solid #97e031;\n\t\t\tmargin-bottom:5px\n\t\t\t\n\t\t}\n\t\theader #lnb li li a {\n\t\t\tdisplay:block;\n\t\t\ttransform:skewX(25deg);\n\t\t\tcolor:#fff;\n\t\t\ttext-align:center;\n\t\t}\n\n\t\theader #lnb > li:hover {\n\t\t\tbackground:black;\n\n\t\t\t\n\t\t}\n\t\theader #lnb > li:hover > a {\n\t\t\tcolor:#fff;\n\t\t}\n\n\t\theader #lnb > li:hover ul { opacity:1; left:90%; }\n\t\theader #lnb li li:hover { background:#97e031; } \n\t\t\n\n\t\t\n\n\t\th1 { \n\t\t\tposition:absolute;\n\t\t\tleft:6%;\n\t\t\ttop:6%;\n\t\t\tz-index:3;\n\t\t}\n\t\t\n\t\tsection.txtbox {\n\t\t\tposition:absolute;\n\t\t\tleft:50%;\n\t\t\ttop:35%;\n\t\t}\n\t\tsection.txtbox .tit {\n\t\t\tfont-size:200px;\n\t\t\tfont-family: 'Monoton', cursive;\n\t\t\tcolor:#97e031\n\t\t}\n\t\tsection.txtbox .tit em {\n\t\t\tfont-family: 'Play', sans-serif;\n\t\t\tfont-size:100px;\n\t\t\tcolor:#fff;\n\t\t}\n\t\tsection.txtbox .txt {\n\t\t\tfont-size:46px;\n\t\t\tfont-family: 'Play', sans-serif;\n\t\t\tcolor:#ccc;\n\t\t\tmargin-top:-50px;\n\t\t\t\n\t\t}\n\t\tsection.txtbox .txt b {\n\t\t\tfont-size:48px;\n\t\t\tfont-family: 'Play', sans-serif;\n\t\t\tcolor:#97e031;\n\t\t\tpadding-left:10px;\n\t\t}\n\t\t#side {\n\t\t\tposition:relative;\n\t\t\twidth:800px;\n\t\t\theight:100%;\n\t\t\tbackground:rgba(0,0,0,0.5);\n\t\t\ttransform:skewX(-40deg);\n\t\t\tposition:absolute;\n\t\t\ttop:0;\n\t\t\tleft:110%;\n\t\t\tpadding-left:100px;\n\t\t\tz-index:7;\n\t\t\ttransition:all 0.7s;\n\t\t}\n\t\t#side:hover { left:80%; }\n\t\t#side .con {\n\t\t\twidth:800px;\n\t\t\theight:100%;\n\t\t\tbackground:rgba(0,0,0,0.5);\n\t\t\tpadding-top:70%;\n\t\t\tbox-sizing:border-box;\n\t\t}\n\t\t#side p { margin-left:200px; color:#97e031; }\n\n\t\t.con p img {\n\t\t\tdisplay:block; opacity:0.5; }\n\n\t\t.con em {\n\t\t\tdisplay:block;\n\t\t\ttransform:skewx(40deg);\n\t\t}\n\t\n\t\t#side:hover p { margin-left:50px; }\n\t\t#side:hover p:first-child {  transition:all 0.5s;  }\n\t\t#side:hover p:nth-child(2) {  transition:all 1s;  }\n\t\t#side:hover p:last-child {  transition:all 1.5s;  }\n\n\t\t#side a:hover img{ opacity:1; }\n\t\t/*\n\t\t.con p:first-child {  transition:all 0.3s; }\n\t\t.con p:nth-child(2) {  padding-left:100%; transition:all 0.5s; }\n\t\t.con p:last-child {  padding-left:100%; transition:all 0.7s; }*/\n\n\t\t/*.con p:first-child:hover {  padding-left:0; }\n\t\t.con p:nth-child(2):hover {  padding-left:0; }\n\t\t.con p:last-child:hover {  padding-left:0; }\n\n\t\t.con p:last-child */\n\t\t\n\t\t#side .contents i {\n\t\t\tposition:absolute;\n\t\t\tleft:100px;\n\t\t\tbottom:50px;\n\t\t\tfont-size:60px;\n\t\t\tanimation:ani linear 1.5s infinite;\n\t\t\tcolor:#97e031;\n\t\t}\n\t\t#side .contents i:nth-child(2) { animation-delay:0.5s; }\n\t\t#side .contents i:last-child { animation-delay:1s; }\n\n\t\t@keyframes ani {\n\t\t\t0% {right:0; transform:sacle(1); opacity:1; }\n\t\t\t100% { right:100px; transform:scale(1.5); opacity:0;}\n\t\t}\n\t\t\n\n\t\t\n\t\t/* ���� 220 */\n\t  \n \n \n  \n  \t\n\t\t\n\t\n  \n  \n  \n\n  \n  \t\n\t\tAbout NIKE\n\t\t\t\n\t\t\t\tEnglish\n\t\t\t\n\t\t\t\n\t\tBrand Info\n\t\t\t\n\t\t\t\tSub\n\t\t\t\tSub\n\t\t\t\tSub\n\t\t\t\tSub\n\t\t\t\n\t\t\t\n\t\tCommunity\n\t\t\t\n\t\t\t\tSub\n\t\t\t\tSub\n\t\t\t\tSub\n\t\t\t\n\t\t\t\n\t\tProduct Value\n\t\t\t\n\t\t\t\tSub\n\t\t\t\tSub\n\t\t\t\n\n\t\t\t\n\t\tCompany History\n\t\t\t\n\t\t\t\tSub\n\t\t\t\n\t\t\t\n\t\n  \n\n  \n\t50/ 24\n\tBest QualifiedAIR MAX\n  \n\n  \n\t  \n\t\t\n\t\t\tEvent & Community\n\t\t\t\n\t\t\n\t\t\n\t\t\tNews & Notice\n\t\t\t\n\t\t\n\t\t\n\t\t\tProduct & Review\n\t\t\t\n\t\t\n\t  \n\t  \n\t\t&lt;\n\t\t&lt;\n\t\t&lt;\n\t  \t\n  \n \n","dateCreated":"2020-05-20T15:38:09+09:00","dateModified":"2020-05-20T15:38:24+09:00","datePublished":"2020-05-20T15:38:09+09:00","description":"","headline":"20200520","image":[],"mainEntityOfPage":{"@type":"WebPage","@id":"https://github.com/CHANHHH/CHANHHH.github.io/2020/05/20/20200520/"},"publisher":{"@type":"Organization","name":"chan","sameAs":["https://github.com/","http://stackoverflow.com/users","https://twitter.com/","https://facebook.com/","https://plus.google.com/","https://www.linkedin.com/profile/","mailto"]},"url":"https://github.com/CHANHHH/CHANHHH.github.io/2020/05/20/20200520/"}</script>
+    <meta name="description" content="nike 	   	   	  	@charset &quot;utf-8&quot;; 		&#x2F;*css�� �����´�.*&#x2F; 		@import url(&#39;https:&#x2F;&#x2F;fonts.googleapis.com&#x2F;css2?family&#x3D;Monoton&amp;family&#x3D;Play&amp;display&#x3D;swap&#39;);  		* { margin:0; padding:0; } 		li { list-s">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="20200520">
+<meta property="og:url" content="https://github.com/CHANHHH/CHANHHH.github.io/2020/05/20/20200520/index.html">
+<meta property="og:site_name" content="chanss">
+<meta property="og:description" content="nike 	   	   	  	@charset &quot;utf-8&quot;; 		&#x2F;*css�� �����´�.*&#x2F; 		@import url(&#39;https:&#x2F;&#x2F;fonts.googleapis.com&#x2F;css2?family&#x3D;Monoton&amp;family&#x3D;Play&amp;display&#x3D;swap&#39;);  		* { margin:0; padding:0; } 		li { list-s">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://github.com/CHANHHH/CHANHHH.github.io/2020/05/20/20200520/img/logo2.png">
+<meta property="og:image" content="https://github.com/CHANHHH/CHANHHH.github.io/2020/05/20/20200520/img/pic1.png">
+<meta property="og:image" content="https://github.com/CHANHHH/CHANHHH.github.io/2020/05/20/20200520/img/pic2.png">
+<meta property="og:image" content="https://github.com/CHANHHH/CHANHHH.github.io/2020/05/20/20200520/img/pic3.png">
+<meta property="article:published_time" content="2020-05-20T06:38:09.251Z">
+<meta property="article:modified_time" content="2020-05-20T06:38:24.517Z">
+<meta property="article:author" content="chan">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://github.com/CHANHHH/CHANHHH.github.io/2020/05/20/20200520/img/logo2.png">
+    
+    
+        
+    
+    
+    
+    
+    
+    <!--STYLES-->
+    
+<link rel="stylesheet" href="/assets/css/all.css">
+
+    
+<link rel="stylesheet" href="/assets/css/jquery.fancybox.css">
+
+    
+<link rel="stylesheet" href="/assets/css/thumbs.css">
+
+    
+<link rel="stylesheet" href="/assets/css/tranquilpeak.css">
+
+    <!--STYLES END-->
+    
+
+    
+
+    
+        
+    
+</head>
+
+    <body>
+        <div id="blog">
+            <!-- Define author's picture -->
+
+
+    
+
+<header id="header" data-behavior="5">
+    <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+    <div class="header-title">
+        <a
+            class="header-title-link"
+            href="/%20"
+            aria-label=""
+        >
+            chanss
+        </a>
+    </div>
+    
+        
+            <a
+                class="header-right-picture "
+                href="#about"
+                aria-label="Open the link: /#about"
+            >
+        
+        
+        </a>
+    
+</header>
+
+            <!-- Define author's picture -->
+
+
+<nav id="sidebar" data-behavior="5">
+    <div class="sidebar-container">
+        
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="https://chanhhh.github.io/"
+                            
+                                target="_blank"
+                            
+                            rel="noopener"
+                            title="Home"
+                        >
+                        <i class="sidebar-button-icon fa fa-home" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Home</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="/all-categories"
+                            
+                            rel="noopener"
+                            title="Categories"
+                        >
+                        <i class="sidebar-button-icon fa fa-bookmark" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Categories</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="/all-tags"
+                            
+                            rel="noopener"
+                            title="Tags"
+                        >
+                        <i class="sidebar-button-icon fa fa-tags" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Tags</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="/all-archives"
+                            
+                            rel="noopener"
+                            title="Archives"
+                        >
+                        <i class="sidebar-button-icon fa fa-archive" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Archives</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link open-algolia-search"
+                            href="#search"
+                            
+                            rel="noopener"
+                            title="Search"
+                        >
+                        <i class="sidebar-button-icon fa fa-search" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Search</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="#about"
+                            
+                            rel="noopener"
+                            title="About"
+                        >
+                        <i class="sidebar-button-icon fa fa-question" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">About</span>
+                    </a>
+            </li>
+            
+        </ul>
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="https://github.com/"
+                            
+                                target="_blank"
+                            
+                            rel="noopener"
+                            title="GitHub"
+                        >
+                        <i class="sidebar-button-icon fab fa-github" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">GitHub</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="http://stackoverflow.com/users"
+                            
+                                target="_blank"
+                            
+                            rel="noopener"
+                            title="Stack Overflow"
+                        >
+                        <i class="sidebar-button-icon fab fa-stack-overflow" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Stack Overflow</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="https://twitter.com/"
+                            
+                                target="_blank"
+                            
+                            rel="noopener"
+                            title="Twitter"
+                        >
+                        <i class="sidebar-button-icon fab fa-twitter" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Twitter</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="https://facebook.com/"
+                            
+                                target="_blank"
+                            
+                            rel="noopener"
+                            title="Facebook"
+                        >
+                        <i class="sidebar-button-icon fab fa-facebook" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Facebook</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="https://plus.google.com/"
+                            
+                                target="_blank"
+                            
+                            rel="noopener"
+                            title="Google +"
+                        >
+                        <i class="sidebar-button-icon fab fa-google-plus" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Google +</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="https://www.linkedin.com/profile/"
+                            
+                                target="_blank"
+                            
+                            rel="noopener"
+                            title="LinkedIn"
+                        >
+                        <i class="sidebar-button-icon fab fa-linkedin" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">LinkedIn</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="/mailto"
+                            
+                            rel="noopener"
+                            title="Mail"
+                        >
+                        <i class="sidebar-button-icon fa fa-envelope" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Mail</span>
+                    </a>
+            </li>
+            
+        </ul>
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="/atom.xml"
+                            
+                            rel="noopener"
+                            title="RSS"
+                        >
+                        <i class="sidebar-button-icon fa fa-rss" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">RSS</span>
+                    </a>
+            </li>
+            
+        </ul>
+        
+    </div>
+</nav>
+
+            
+            <div id="main" data-behavior="5"
+                 class="
+                        hasCoverMetaIn
+                        ">
+                
+<article class="post">
+    
+    
+        <div class="post-header main-content-wrap text-left">
+    
+        <h1 class="post-title">
+            20200520
+        </h1>
+    
+    
+        <div class="post-meta">
+    <time datetime="2020-05-20T15:38:09+09:00">
+	
+		    May 20, 2020
+    	
+    </time>
+    
+</div>
+
+    
+</div>
+
+    
+    <div class="post-content markdown">
+        <div class="main-content-wrap">
+            <!DOCTYPE html>
+ <head>
+  <meta charset="UTF-8">
+	  <title>nike</title>
+	  <link href="https://fonts.googleapis.com/css2?family=Monoton&family=Play&display=swap" rel="stylesheet">
+	  <style>
+	  	@charset "utf-8";
+		/*css�� �����´�.*/
+		@import url('https://fonts.googleapis.com/css2?family=Monoton&family=Play&display=swap');
+
+		* { margin:0; padding:0; }
+		li { list-style:none; }
+		a { text-decoration:none; color:#bbb; }
+		html,body { height:100%; background:#111; }
+		
+		figure {
+			width:100%;
+			height:100%;
+			overflow:hidden;
+			position:relative;
+		}
+		figure video {
+			width:100%;
+			height:100%; /*�������� ũ�Ⱑ �߿�. 1280 1000*/
+			min-width:1280px; /*overflow hidden �ֱ�*/
+		}
+
+		header {
+			width:700px;
+			height:100%;
+			background:linear-gradient(-45deg, #e6fc55 0%, #b9fb05 50%, #97e031 100%);
+			transform:skewX(-40deg);
+			position:absolute;
+			left:-420px;
+			top:0;
+		}
+		header #lnb li a {
+			display:block;
+			transform:skewX(25deg);
+			color:#000;
+			text-align:right;
+			margin-right:40px;
+		}
+		header #lnb li {
+			width:220px;
+			
+			padding:10px;
+			position:relative;
+		}
+		header #lnb > li:first-child {
+			background:black;
+		}
+		header #lnb > li:first-child a {
+			color:#fff;
+		}
+
+		header ul > li {
+			position:absolute;
+			top:0;
+			left:0;
+			position:relative;
+			
+		}
+		header ul li ul {
+			position:absolute;
+			top:-2%;
+			left:-300%;
+			opacity:0;
+			transition:all 0.3s;
+		}
+		
+		header ul li:first-child ul {
+			opacity:1;
+			left:90%;
+			top:-30%;
+			
+		}
+
+		header ul {
+			position:absolute;
+			top:20%;
+			right:0;
+		}
+			header #lnb li li {
+			display:block;
+			background:rgba(0,0,0,0.5);
+			border-bottom:5px solid #97e031;
+			margin-bottom:5px
+			
+		}
+		header #lnb li li a {
+			display:block;
+			transform:skewX(25deg);
+			color:#fff;
+			text-align:center;
+		}
+
+		header #lnb > li:hover {
+			background:black;
+
+			
+		}
+		header #lnb > li:hover > a {
+			color:#fff;
+		}
+
+		header #lnb > li:hover ul { opacity:1; left:90%; }
+		header #lnb li li:hover { background:#97e031; } 
+		
+
+		
+
+		h1 { 
+			position:absolute;
+			left:6%;
+			top:6%;
+			z-index:3;
+		}
+		
+		section.txtbox {
+			position:absolute;
+			left:50%;
+			top:35%;
+		}
+		section.txtbox .tit {
+			font-size:200px;
+			font-family: 'Monoton', cursive;
+			color:#97e031
+		}
+		section.txtbox .tit em {
+			font-family: 'Play', sans-serif;
+			font-size:100px;
+			color:#fff;
+		}
+		section.txtbox .txt {
+			font-size:46px;
+			font-family: 'Play', sans-serif;
+			color:#ccc;
+			margin-top:-50px;
+			
+		}
+		section.txtbox .txt b {
+			font-size:48px;
+			font-family: 'Play', sans-serif;
+			color:#97e031;
+			padding-left:10px;
+		}
+		#side {
+			position:relative;
+			width:800px;
+			height:100%;
+			background:rgba(0,0,0,0.5);
+			transform:skewX(-40deg);
+			position:absolute;
+			top:0;
+			left:110%;
+			padding-left:100px;
+			z-index:7;
+			transition:all 0.7s;
+		}
+		#side:hover { left:80%; }
+		#side .con {
+			width:800px;
+			height:100%;
+			background:rgba(0,0,0,0.5);
+			padding-top:70%;
+			box-sizing:border-box;
+		}
+		#side p { margin-left:200px; color:#97e031; }
+
+		.con p img {
+			display:block; opacity:0.5; }
+
+		.con em {
+			display:block;
+			transform:skewx(40deg);
+		}
+	
+		#side:hover p { margin-left:50px; }
+		#side:hover p:first-child {  transition:all 0.5s;  }
+		#side:hover p:nth-child(2) {  transition:all 1s;  }
+		#side:hover p:last-child {  transition:all 1.5s;  }
+
+		#side a:hover img{ opacity:1; }
+		/*
+		.con p:first-child {  transition:all 0.3s; }
+		.con p:nth-child(2) {  padding-left:100%; transition:all 0.5s; }
+		.con p:last-child {  padding-left:100%; transition:all 0.7s; }*/
+
+		/*.con p:first-child:hover {  padding-left:0; }
+		.con p:nth-child(2):hover {  padding-left:0; }
+		.con p:last-child:hover {  padding-left:0; }
+
+		.con p:last-child */
+		
+		#side .contents i {
+			position:absolute;
+			left:100px;
+			bottom:50px;
+			font-size:60px;
+			animation:ani linear 1.5s infinite;
+			color:#97e031;
+		}
+		#side .contents i:nth-child(2) { animation-delay:0.5s; }
+		#side .contents i:last-child { animation-delay:1s; }
+
+		@keyframes ani {
+			0% {right:0; transform:sacle(1); opacity:1; }
+			100% { right:100px; transform:scale(1.5); opacity:0;}
+		}
+		
+
+		
+		/* ���� 220 */
+	  </style>
+ <meta name="generator" content="Hexo 4.2.0"></head>
+ <body>
+  <figure>
+  	<video loop autoplay muted>
+		<source src="img/nike.mp4" type="video/mp4">
+	</video>
+  </figure>
+  
+  <h1><img src="img/logo2.png"></h1>
+
+  <header>
+  	<ul id="lnb">
+		<li><a href="#">About NIKE</a>
+			<ul>
+				<li><a href="#">English</a></li>
+			</ul>
+		</li>	
+		<li><a href="#">Brand Info</a>
+			<ul>
+				<li><a href="#">Sub</a></li>
+				<li><a href="#">Sub</a></li>
+				<li><a href="#">Sub</a></li>
+				<li><a href="#">Sub</a></li>
+			</ul>
+		</li>	
+		<li><a href="#">Community</a>
+			<ul>
+				<li><a href="#">Sub</a></li>
+				<li><a href="#">Sub</a></li>
+				<li><a href="#">Sub</a></li>
+			</ul>
+		</li>	
+		<li><a href="#">Product Value</a>
+			<ul>
+				<li><a href="#">Sub</a></li>
+				<li><a href="#">Sub</a></li>
+			</ul>
+
+		</li>	
+		<li><a href="#">Company History</a>
+			<ul>
+				<li><a href="#">Sub</a></li>
+			</ul>
+		</li>	
+	</ul>
+  </header>
+
+  <section class="txtbox">
+	<p class="tit">50<em>/ 24</em></p>
+	<p class="txt">Best Qualified<b>AIR MAX</b></p>
+  </section>
+
+  <aside id="side">
+	  <div class="con">
+		<p>
+			<em>Event & Community</em>
+			<a href="#"><img src="img/pic1.png" alt=""></a>
+		</p>
+		<p>
+			<em>News & Notice</em>
+			<a href="#"><img src="img/pic2.png" alt=""></a>
+		</p>
+		<p>
+			<em>Product & Review</em>
+			<a href="#"><img src="img/pic3.png" alt=""></a>
+		</p>
+	  </div>
+	  <div class="contents">
+		<i>&lt;</i>
+		<i>&lt;</i>
+		<i>&lt;</i>
+	  </div>	
+  </aside>
+ </body>
+</html>
+            
+
+
+        </div>
+    </div>
+    <div id="post-footer" class="post-footer main-content-wrap">
+        
+        
+            <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    <a
+                        class="post-action-btn btn btn--disabled"
+                        aria-hidden="true"
+                    >
+                        
+                        <i class="fa fa-angle-left" aria-hidden="true"></i>
+                        <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                    </a>
+            </li>
+            <li class="post-action">
+                
+                    
+                <a
+                    class="post-action-btn btn btn--default tooltip--top"
+                    href="/2020/05/14/20200514/"
+                    data-tooltip="20200514"
+                    aria-label="NEXT: 20200514"
+                >
+                    
+                        <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                        <i class="fa fa-angle-right" aria-hidden="true"></i>
+                    </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a
+                class="post-action-btn btn btn--default btn-open-shareoptions"
+                href="#btn-open-shareoptions"
+                aria-label="Share this post"
+            >
+                <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </a>
+        </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a
+                    class="post-action-btn btn btn--default"
+                    target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://github.com/CHANHHH/CHANHHH.github.io/2020/05/20/20200520/"
+                    title="Share on Facebook"
+                    aria-label="Share on Facebook"
+                >
+                    <i class="fab fa-facebook" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a
+                    class="post-action-btn btn btn--default"
+                    target="new" href="https://twitter.com/intent/tweet?text=https://github.com/CHANHHH/CHANHHH.github.io/2020/05/20/20200520/"
+                    title="Share on Twitter"
+                    aria-label="Share on Twitter"
+                >
+                    <i class="fab fa-twitter" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a
+                    class="post-action-btn btn btn--default"
+                    target="new" href="https://plus.google.com/share?url=https://github.com/CHANHHH/CHANHHH.github.io/2020/05/20/20200520/"
+                    title="Share on Google+"
+                    aria-label="Share on Google+"
+                >
+                    <i class="fab fa-google-plus" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+        
+            
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#" aria-label="Back to top">
+            
+                <i class="fa fa-list" aria-hidden="true"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+        
+        
+            
+        
+    </div>
+</article>
+
+
+
+                <footer id="footer" class="main-content-wrap">
+    <span class="copyrights">
+        Copyrights &copy; 2020 chan. All Rights Reserved.
+    </span>
+</footer>
+
+            </div>
+            
+                <div id="bottom-bar" class="post-bottom-bar" data-behavior="5">
+                    <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    <a
+                        class="post-action-btn btn btn--disabled"
+                        aria-hidden="true"
+                    >
+                        
+                        <i class="fa fa-angle-left" aria-hidden="true"></i>
+                        <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                    </a>
+            </li>
+            <li class="post-action">
+                
+                    
+                <a
+                    class="post-action-btn btn btn--default tooltip--top"
+                    href="/2020/05/14/20200514/"
+                    data-tooltip="20200514"
+                    aria-label="NEXT: 20200514"
+                >
+                    
+                        <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                        <i class="fa fa-angle-right" aria-hidden="true"></i>
+                    </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a
+                class="post-action-btn btn btn--default btn-open-shareoptions"
+                href="#btn-open-shareoptions"
+                aria-label="Share this post"
+            >
+                <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </a>
+        </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a
+                    class="post-action-btn btn btn--default"
+                    target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://github.com/CHANHHH/CHANHHH.github.io/2020/05/20/20200520/"
+                    title="Share on Facebook"
+                    aria-label="Share on Facebook"
+                >
+                    <i class="fab fa-facebook" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a
+                    class="post-action-btn btn btn--default"
+                    target="new" href="https://twitter.com/intent/tweet?text=https://github.com/CHANHHH/CHANHHH.github.io/2020/05/20/20200520/"
+                    title="Share on Twitter"
+                    aria-label="Share on Twitter"
+                >
+                    <i class="fab fa-twitter" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a
+                    class="post-action-btn btn btn--default"
+                    target="new" href="https://plus.google.com/share?url=https://github.com/CHANHHH/CHANHHH.github.io/2020/05/20/20200520/"
+                    title="Share on Google+"
+                    aria-label="Share on Google+"
+                >
+                    <i class="fab fa-google-plus" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+        
+            
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#" aria-label="Back to top">
+            
+                <i class="fa fa-list" aria-hidden="true"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+                </div>
+                
+    <div id="share-options-bar" class="share-options-bar" data-behavior="5">
+        <i id="btn-close-shareoptions" class="fa fa-times"></i>
+        <ul class="share-options">
+            
+                
+                
+                <li class="share-option">
+                    <a
+                        class="share-option-btn"
+                        target="new"
+                        href="https://www.facebook.com/sharer/sharer.php?u=https://github.com/CHANHHH/CHANHHH.github.io/2020/05/20/20200520/"
+                        aria-label="Share on Facebook"
+                    >
+                        <i class="fab fa-facebook" aria-hidden="true"></i><span>Share on Facebook</span>
+                    </a>
+                </li>
+            
+                
+                
+                <li class="share-option">
+                    <a
+                        class="share-option-btn"
+                        target="new"
+                        href="https://twitter.com/intent/tweet?text=https://github.com/CHANHHH/CHANHHH.github.io/2020/05/20/20200520/"
+                        aria-label="Share on Twitter"
+                    >
+                        <i class="fab fa-twitter" aria-hidden="true"></i><span>Share on Twitter</span>
+                    </a>
+                </li>
+            
+                
+                
+                <li class="share-option">
+                    <a
+                        class="share-option-btn"
+                        target="new"
+                        href="https://plus.google.com/share?url=https://github.com/CHANHHH/CHANHHH.github.io/2020/05/20/20200520/"
+                        aria-label="Share on Google+"
+                    >
+                        <i class="fab fa-google-plus" aria-hidden="true"></i><span>Share on Google+</span>
+                    </a>
+                </li>
+            
+        </ul>
+    </div>
+
+
+            
+        </div>
+        
+
+
+<div id="about">
+    <div id="about-card">
+        <div id="about-btn-close">
+            <i class="fa fa-times"></i>
+        </div>
+        
+            <h4 id="about-card-name">chan</h4>
+        
+            <div id="about-card-bio"><p>author.bio</p>
+</div>
+        
+        
+            <div id="about-card-job">
+                <i class="fa fa-briefcase"></i>
+                <br/>
+                <p>author.job</p>
+
+            </div>
+        
+        
+    </div>
+</div>
+
+        
+        
+<div id="cover" style="background-image:url('/assets/images/cover.jpg');"></div>
+        <!--SCRIPTS-->
+
+<script src="/assets/js/jquery.js"></script>
+
+
+<script src="/assets/js/jquery.fancybox.js"></script>
+
+
+<script src="/assets/js/thumbs.js"></script>
+
+
+<script src="/assets/js/tranquilpeak.js"></script>
+
+<!--SCRIPTS END-->
+
+
+    
+
+
+
+
+    </body>
+</html>
